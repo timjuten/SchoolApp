@@ -1,4 +1,4 @@
-from data import user_info  # імпортуємо дані з словника у файлі data
+from data import get_data  # імпортуємо дані з словника у файлі data
 
 
 class Users:
@@ -15,12 +15,13 @@ class Users:
         """
         метод перевірки користувача
         """
-        if self.email == user_info["email"] and self.password == user_info["password"]:
-            print(f"Вітаю, ви є {user_info['user_role']}")
+        user_info = get_data()
+        if self.email == user_info[0][3] and self.password == user_info[0][4]:
+            print(f"Вітаю, ви є {user_info[0][5]}")
         else:
             print("Я не знаю хто ви")
 
 
 if __name__ == "__main__":
-    user = Users("timurjuten@gmail.com", "2345")  # створюємо об'єкт у класі юзер
+    user = Users("timurjuten@gmail.com", "12345")  # створюємо об'єкт у класі юзер
     user.check_user()  # визиваємо метод перевірки користувача
