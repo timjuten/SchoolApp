@@ -8,11 +8,9 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
    userid INT PRIMARY KEY,
    fname TEXT,
    lname TEXT,
-   role TEXT,
    email TEXT,
    password MESSAGE_TEXT );
 """)
-
 
 def get_data():
     """
