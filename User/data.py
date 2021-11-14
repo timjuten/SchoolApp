@@ -15,12 +15,11 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
 
 def get_data() :
     """
-
     функція, яка повертає дані з бази даних:
     """
     cur.execute("SELECT * FROM users;")
-    three_results = cur.fetchmany(10)
-    data = three_results
+    all_results = cur.fetchall()
+    data = all_results
     return data
 
 
