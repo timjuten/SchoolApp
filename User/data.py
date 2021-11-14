@@ -12,7 +12,8 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
    password MESSAGE_TEXT );
 """)
 
-def get_data():
+
+def get_data() :
     """
 
     функція, яка повертає дані з бази даних:
@@ -21,3 +22,7 @@ def get_data():
     three_results = cur.fetchmany(10)
     data = three_results
     return data
+
+
+if __name__ == "__main__":
+    pass

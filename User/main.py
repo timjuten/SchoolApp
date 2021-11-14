@@ -16,12 +16,18 @@ class Users:
         метод перевірки користувача
         """
         user_info = get_data()
-        if self.email == user_info[0][3] and self.password == user_info[0][4]:
-            print(f"Вітаю, ви є {user_info[0][5]}")
-        else:
-            print("Я не знаю хто ви")
+        for u in range(0, len(user_info)):
+            if self.email == user_info[u][3] and self.password == user_info[u][4]:
+                print(f"Вітаю, ви є {user_info[u][1]}")
+                break
+            else:
+                print("Я не знаю хто ви")
+                break
 
 
 if __name__ == "__main__":
-    user = Users("timurjuten@gmail.com", "12345")  # створюємо об'єкт у класі юзер
+    email = input("Введіть емейл: ")
+    password = input("Введіть пароль: ")
+
+    user = Users(email, password)  # створюємо об'єкт у класі юзер
     user.check_user()  # визиваємо метод перевірки користувача
