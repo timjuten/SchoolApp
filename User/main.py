@@ -1,5 +1,6 @@
 from data import get_data  # імпортуємо дані з словника у файлі data
-
+import base64
+import getpass
 
 class Users:
     """створюємо клас Юзер, в якому буде метод перевірки користувача"""
@@ -9,7 +10,7 @@ class Users:
         метод ініт спрацювовує під час ініціалізації об'єкта у класі
         """
         self.email = email  # локальний параметр з емейлом
-        self.password = password  # локальний параметр з паролем
+        self.password = password # локальний параметр з паролем
     
     def check_user(self):
         """
@@ -27,7 +28,8 @@ class Users:
 
 if __name__ == "__main__":
     email = input("Введіть емейл: ")
-    password = input("Введіть пароль: ")
+    password = getpass.getpass('Введіть пароль: ')
 
+    password = base64.b64encode(password.encode("utf-8"))
     user = Users(email, password)  # створюємо об'єкт у класі юзер
     user.check_user()  # визиваємо метод перевірки користувача

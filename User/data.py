@@ -1,4 +1,5 @@
 import sqlite3
+import base64
 
 conn = sqlite3.connect('users.db')
 
@@ -11,6 +12,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
    email TEXT,
    password MESSAGE_TEXT );
 """)
+
 
 
 def get_data() :
