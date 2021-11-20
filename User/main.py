@@ -1,6 +1,7 @@
-from data import get_data  # імпортуємо дані з словника у файлі data
+from data import get_data, get_user  # імпортуємо дані з словника у файлі data
 import base64
 import getpass
+
 
 class Users:
     """створюємо клас Юзер, в якому буде метод перевірки користувача"""
@@ -16,14 +17,13 @@ class Users:
         """
         метод перевірки користувача
         """
-        user_info = get_data()
-        for u in range(0, len(user_info)):
-            if self.email == user_info[u][3] and self.password == user_info[u][4]:
-                print(f"Вітаю, {user_info[u][1]}")
-                break
-            else:
-                print("Я не знаю хто ви")
-                break
+        user_info = get_user(self.email)
+        if user_info and self.password == user_info[4]:
+            print(f"Вітаю, {user_info[1]}")
+        elif user_info is None:
+            pass
+        else:
+            print("Я не знаю хто ви")
 
 
 if __name__ == "__main__":
