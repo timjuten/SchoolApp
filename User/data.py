@@ -14,9 +14,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
 """)
 
 
-
-
-def get_data() :
+def get_data():
     """
     функція, яка повертає дані з бази даних:
     """
@@ -30,7 +28,7 @@ def get_user(email):
     cur.execute(f"""SELECT * FROM USERS WHERE email='{email}';""")
     user = cur.fetchone()
     if user is None:
-        print("При пошуку юзера трапилася помилки")
+        print("При пошуку юзера трапилася помилка")
         return None
     else:
         return user
