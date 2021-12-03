@@ -10,10 +10,10 @@ cur.execute("""CREATE TABLE news(
    creationDate TEXT,
    publicDate TEXT,
    author INT,
-   FOREIGN KEY(author) REFERENCES users(userid),
    title TEXT,
    image_URL TEXT,
-   body TEXT
-    );
+   body TEXT,
+   FOREIGN KEY (author) REFERENCES users (userid)
+);
 """)
 conn.commit()
