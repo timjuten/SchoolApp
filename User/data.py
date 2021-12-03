@@ -1,7 +1,7 @@
 import sqlite3
 import base64
 
-conn = sqlite3.connect('users.db')
+conn = sqlite3.connect('../Database/main.db')
 
 cur = conn.cursor()
 
