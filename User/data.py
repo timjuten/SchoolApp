@@ -14,6 +14,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
 """)
 
 
+
 def get_data():
     """
     функція, яка повертає дані з бази даних:
