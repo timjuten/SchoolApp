@@ -1,7 +1,6 @@
-import sys
-
 from rules import get_user
 import keyboard
+import sys
 
 
 class voteCreator:
@@ -19,25 +18,26 @@ class voteCreator:
             sys.exit()
 
     def create_vote(self, vote_name, vote_body):
-        if role:
-            print(f"{vote_name}\n{vote_body}\nНатисніть на J, щоби доєднатися")
-            if keyboard.is_pressed('j'):
-                print("Натисніть на Y, якщо так, або N, якщо ні")
-                while True:
-                    yes = 0
-                    no = 0
-                    if keyboard.is_pressed("y"):
-                        yes += 1
-                    elif keyboard.is_pressed("n"):
-                        no += 1
-                    if yes > no:
-                        percent = (yes/(yes + no)) * 100
-                        print(f'{percent}% обрали "Так"')
-                        break
-                    elif yes < no:
-                        percent = (no/(yes + no)) * 100
-                        print(f'{percent}% обрали "Ні"')
-                        break
+        if self.check_role:
+            print("Натисніть на J, щоби доєднатися")
+            while True:
+                if keyboard.is_pressed("j"):
+                    print("Натисніть на Y, якщо так, або N, якщо ні")
+                    while True:
+                        yes = 0
+                        no = 0
+                        if keyboard.is_pressed("y"):
+                            yes += 1
+                        elif keyboard.is_pressed("n"):
+                            no += 1
+                        if yes > no:
+                            percent = (yes/(yes + no)) * 100
+                            print(f'{percent}% обрали "Так"')
+                            break
+                        elif yes < no:
+                            percent = (no/(yes + no)) * 100
+                            print(f'{percent}% обрали "Ні"')
+                            break
             else:
                 print("Ви не доєдналися до голосування")
 
