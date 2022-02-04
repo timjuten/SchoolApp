@@ -28,3 +28,11 @@ while True:
     data = client.recv(2048)
     print(data.decode("utf-8"))
     client.send(input("::: ").encode("utf-8"))
+
+client.connect(("127.0.0.1", 6578))
+
+
+while True:
+    data = client.recv(2048)
+    print(data.decode("utf-8"))
+

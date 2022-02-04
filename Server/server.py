@@ -1,4 +1,5 @@
 import socket
+<<<<<<< HEAD
 import sqlite3
 from User.data import get_user
 from timeit import default_timer
@@ -10,10 +11,18 @@ from threading import Thread
 server = socket.socket(
     socket.AF_INET,
     socket.SOCK_STREAM,
+=======
+
+server = socket.socket(
+
+    socket.AF_INET,
+    socket.SOCK_STREAM
+>>>>>>> fc8da5de50716a33d25a8f5a6b96df8c972c2ba3
 
 )
 
 server.bind(
+<<<<<<< HEAD
     
     ("127.0.0.1", 1234) # localhost
 
@@ -95,3 +104,24 @@ while True:
     
 
     
+=======
+    ("127.0.0.1", 6578)
+)
+
+user_count = 0
+LIMIT = 10
+
+server.listen(5)
+print("Server is running")
+
+while True:
+    user_socket, address = server.accept()
+    user_count += 1
+    if user_count == LIMIT:
+        server.close()
+
+    print(f"{user_socket} підключився. {user_count}/10")
+
+    user_socket.send("Вітаю".encode("utf-8"))
+
+>>>>>>> fc8da5de50716a33d25a8f5a6b96df8c972c2ba3
