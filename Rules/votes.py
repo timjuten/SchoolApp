@@ -1,5 +1,6 @@
 from rules import get_user
 import keyboard
+import socket
 import sys
 
 
