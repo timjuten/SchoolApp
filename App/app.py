@@ -3,7 +3,8 @@ from kivy.uix.label import Label
 from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
-
+import os
+os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
 
 Window.size = (1080, 1920)
