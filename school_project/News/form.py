@@ -1,6 +1,6 @@
 from news import get_news
 import sqlite3
-from User.data import get_user
+from school_project.User.data import get_user
 
 
 conn = sqlite3.connect('../Database/main.db')
